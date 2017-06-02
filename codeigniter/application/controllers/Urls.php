@@ -10,7 +10,7 @@ class Urls extends CI_Controller {
 
 	public function Index(){
 		$this->form_validation->set_rules('address', 'URL', 'required|min_length[5]|max_length[1000]|trim');
-		if($this->form_valitation->run() == FALSE){
+		if($this->form_validation->run() == FALSE){
 			$data['error'] = validation_errors();
 			$data['short_url'] = false;
 		}else{
