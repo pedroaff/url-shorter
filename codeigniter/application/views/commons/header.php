@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <title>Url shorter</title>
 
-    <link rel="stylesheet" href="bower_components/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link	href='https://fonts.googleapis.com/css?family=Roboto:300'	rel='stylesheet'	type='text/css'>
-    <link	href="<?=base_url('assets/css/layout.css')?>" rel="stylesheet">
+    <link	href="<?php echo base_url(); ?>/assets/css/layout.css" rel="stylesheet">
   </head>
   <body>
 
@@ -26,10 +26,11 @@
           <ul class="nav navbar-nav pull-right">
             <li><a href="<?=base_url()?>">Home</a></li>
             <?php if($this->session->userdata('logged')){?>
-            <li><a href="<?=base_url('minhas-urls')?>">Minhas URLs</a></li>
-            <li><a href="<?=base_url('alterar-senha')?>">Alterar senha </a></li>
-            <li><a href="<?=base_url('logout')?>">Sair</a></li>
-            <li><a href="<?=base_url('login')?>">Login/Cadastro</a></li> <?php } ?>
+              <li><a href="<?=base_url('minhas-urls')?>">Minhas URLs</a></li>
+              <li><a href="<?=base_url('alterar-senha')?>">Alterar senha </a></li>
+              <li><a href="<?=base_url('logout')?>">Sair</a></li>
+              <li><a href="<?=base_url('login')?>">Login/Cadastro</a></li>
+            <?php } ?>
           </ul>
         </div>
       </div>

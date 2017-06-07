@@ -6,6 +6,8 @@ class Urls extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('string');
 		$this->load->library('form_validation');
+		$this->load->library('session');
+
 	}
 
 	public function Index(){
@@ -30,8 +32,9 @@ class Urls extends CI_Controller {
 				$data['show_url'] = 'false';
 			}
 		}
-
+		$this->load->view('commons/header');
 		$this->load->view('home', $data);
+		$this->load->view('commons/footer');
 	}
 
 	public function Go(){

@@ -7,6 +7,7 @@ class User extends CI_Controller {
     parent::__construct();
     $this->load->model('User_model');
     $this->load->library('form_validation');
+		$this->load->library('session');
   }
 
   public function Login(){
@@ -33,11 +34,13 @@ class User extends CI_Controller {
           }
         }
       }else{
-        $data['error'] = "Usuário não cadastrado"
+        $data['error'] = "Usuário não cadastrado";
       }
     }
 
+		$this->load->view('commons/footer');
     $this->load->view('login', $data);
+		$this->load->view('commons/header');
   }
 
   public function Logout(){

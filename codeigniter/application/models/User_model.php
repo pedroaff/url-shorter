@@ -10,10 +10,10 @@ class	User_model	extends	CI_Model{
     $data['passw'] = password_hash($data['passw'], PASSWORD_DEFAULT);
     $this->db->insert('users', $data);
     $userID = $this->db->insert_id();
-    if($userID{
+    if($userID){
       return $this->GetUser($userID);
     }else{
-      $return false;
+      return false;
     }
   }
 
